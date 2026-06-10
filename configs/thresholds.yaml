@@ -1,0 +1,66 @@
+# Per-class operational thresholds for ConveyorEye.
+#
+# WHY this file is separate from the model:
+#   The confidence threshold is a *business* decision, not a model property. The
+#   same weights can be tuned for "catch every crack, tolerate false alarms" on a
+#   safety line, or "only flag what you're sure about" on a cosmetic line. Encoding
+#   that here lets ops re-tune from a PR sweep (see eval/threshold.py export_yaml)
+#   without touching weights or code.
+#
+# Asymmetric business cost is the whole point:
+#   - crack         : a missed crack can ship a structurally unsound part -> recall
+#                     is paramount, false alarms are cheap (a human re-checks).
+#   - missing_part  : flagging a good part as "missing a component" halts the line
+#                     and is expensive; we bias toward precision and accept some
+#                     misses (caught downstream at QA).
+#   - scratch/dent/discoloration : cosmetic, balanced F1 is fine.
+#
+# `threshold` is the value used at inference today. `target_recall` /
+# `target_precision` are the operating-point goals the sweeper aims for and may
+# overwrite `threshold` when you run evaluate.py --export-thresholds.
+
+classes:
+  scratch:
+    threshold: 0.45
+    target_precision: 0.80
+    target_recall: 0.80      # cosmetic, common -> balanced
+    rationale: "High-volume cosmetic defect; balance F1 to avoid alarm fatigue."
+
+  crack:
+    threshold: 0.25          # deliberately low: catch faint cracks
+    target_recall: 0.97      # SAFETY-CRITICAL: misses are unacceptable
+    target_precision: 0.50   # false alarms tolerated; cheap to re-inspect
+    rationale: "Structural/safety defect. Recall dominates; FP cost is low."
+
+  dent:
+    threshold: 0.40
+    target_precision: 0.75
+    target_recall: 0.80
+    rationale: "Functional defect; mild recall bias."
+
+  discoloration:
+    threshold: 0.50
+    target_precision: 0.80
+    target_recall: 0.70
+    rationale: "Often cosmetic and confusable with lighting; precision bias to cut FPs."
+
+  missing_part:
+    threshold: 0.60          # deliberately high: be sure before stopping the line
+    target_precision: 0.95   # PRECISION-CRITICAL: a false stop is expensive
+    target_recall: 0.70      # accept some misses (downstream QA backstop)
+    rationale: "Line-stop trigger. A false positive halts production; precision dominates."
+
+# Fallback applied to any class not listed above.
+default_threshold: 0.50
+
+# IoU used both for NMS at inference and for TP/FP matching in the evaluator.
+# Kept in one place so the operating point and the metric agree.
+iou_threshold: 0.50
+
+active_learning:
+  # Frames whose max detection confidence falls below this are candidates for the
+  # labeling queue — the model is "unsure", which is where new labels buy the most.
+  low_confidence_threshold: 0.55
+  # Per inference batch, cap how many frames we enqueue for human labeling so the
+  # queue does not explode under drift. The samplers spend this budget.
+  queue_budget_per_batch: 20

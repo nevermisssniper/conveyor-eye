@@ -1,0 +1,68 @@
+# Albumentations pipeline for ConveyorEye.
+#
+# WHY a YAML config instead of hard-coded transforms?
+#   Augmentation policy is an *operational* knob. When the line installs a new
+#   camera, changes belt speed, or swaps the lighting rig, the right response is
+#   to edit numbers here — not to redeploy code. Every transform below is
+#   annotated with the *physical phenomenon* it is meant to model, so a future
+#   engineer can re-derive the parameters from line specs rather than copying
+#   magic numbers.
+#
+# Coordinate format: YOLO (normalized cx, cy, w, h). bbox_params is attached by
+# build_transforms(); do not duplicate it here.
+#
+# Reference line assumptions used to derive parameters below:
+#   belt_speed       = 0.5 m/s
+#   camera_fov_width = 0.30 m  -> 1280 px  => ~4267 px/m
+#   exposure_time    = 1/250 s
+#   => motion smear  = 0.5 * (1/250) * 4267 ~= 8.5 px  (see MotionBlur blur_limit)
+
+img_size: 640          # YOLOv8 default square input; letterboxed at inference.
+
+train:
+  - name: HorizontalFlip
+    # A defect is orientation-agnostic on the belt; parts arrive in any rotation.
+    params: { p: 0.5 }
+
+  - name: RandomBrightnessContrast
+    # Models vignette + ambient light drift across a shift. brightness_limit kept
+    # modest (0.2) because industrial lighting is controlled, not outdoor.
+    params: { brightness_limit: 0.2, contrast_limit: 0.2, p: 0.5 }
+
+  - name: MotionBlur
+    # Smear from belt motion during exposure. blur_limit upper bound ~= 9 px,
+    # rounded up from the ~8.5 px smear derived above (must be odd for the kernel).
+    params: { blur_limit: 9, p: 0.3 }
+
+  - name: GaussNoise
+    # Sensor read noise + thermal noise on a cheap industrial CMOS.
+    # std_range is a fraction of the 0..255 range (Albumentations 2.x API):
+    # ~[0.02, 0.1] ≈ sigma 5..25 DN, the read-noise band of a budget CMOS.
+    params: { std_range: [0.02, 0.1], p: 0.3 }
+
+  - name: ImageCompression
+    # Frames arrive over a lossy MJPEG stream from the line PLC/camera.
+    # quality_range lower bound 40 models a congested network dropping bitrate.
+    params: { quality_range: [40, 90], p: 0.3 }
+
+  - name: CoarseDropout
+    # Proxy for partial occlusion: another part, a robot arm, or oil splatter
+    # covering a region of the frame. Hole count/size kept small so we never
+    # erase a whole defect (which would create a label-image mismatch).
+    params:
+      num_holes_range: [1, 3]
+      hole_height_range: [8, 48]
+      hole_width_range: [8, 48]
+      fill: 0
+      p: 0.25
+
+  - name: CLAHE
+    # Local contrast equalization — also applied at inference (clahe_equalize).
+    # Helps low-contrast scratches/discoloration survive compression.
+    params: { clip_limit: 2.0, tile_grid_size: [8, 8], p: 0.2 }
+
+val:
+  # Validation is deterministic: NO stochastic augmentation. We only normalize
+  # geometry so val mAP is comparable run-to-run. Letterboxing happens in
+  # preprocess_frame(); nothing photometric is applied here.
+  []
