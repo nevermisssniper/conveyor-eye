@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.DS_Store
+
+# Generated data (regenerate locally via simulate_data.py)
+data/raw/
+data/real/
+data/finetune/
+
+# Model weights & training runs
+runs/
+*.pt
+*.pkl
+
+# Datasets
+tile/
+tile.tar.xz
+real_data.zip
+real_good.zip
+
+# Runtime / serving
+*.db
+*.db-shm
+*.db-wal
+results/
+
+# Misc
+KEYS.md

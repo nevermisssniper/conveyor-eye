@@ -1,0 +1,29 @@
+# Fine-tuning dataset — mixed synthetic + real crack + real good images.
+#
+# Train: 2000 synthetic (all 5 classes)
+#      + 17 real MVTec crack images (class 1 positive)
+#      + 230 real MVTec good images (empty labels = background negatives)
+# Val:   400 synthetic only — catches regression on non-crack classes;
+#        real-world crack performance is measured separately via eval_mvtec.py
+#
+# Label resolution: Ultralytics replaces /images/ → /labels/ in each path, so:
+#   data/raw/images/train/  → data/raw/labels/train/   (synthetic, all classes)
+#   data/real/images/crack/ → data/real/labels/crack/  (real crack, class 1 only)
+#   data/real/images/good/  → data/real/labels/good/   (real good, empty = background)
+
+path: /Users/raydenkhuraijam/Claude/Projects/Conveyor Eye
+
+train:
+  - data/raw/images/train      # 2000 synthetic images (scratch/crack/dent/discoloration/missing_part)
+  - data/real/images/crack     # 17 real MVTec crack images (class 1 positive)
+  - data/real/images/good      # 230 real MVTec good images (background negatives)
+
+val: data/raw/images/val       # 400 synthetic images
+
+nc: 5
+names:
+  0: scratch
+  1: crack
+  2: dent
+  3: discoloration
+  4: missing_part
