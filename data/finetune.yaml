@@ -1,4 +1,4 @@
-path: ..
+path: .
 
 train:
   - data/raw/images/train      # 2000 synthetic images (scratch/crack/dent/discoloration/missing_part)
