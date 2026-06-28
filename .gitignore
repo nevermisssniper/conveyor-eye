@@ -27,6 +27,9 @@ real_good.zip
 *.db-wal
 results/
 
+# Virtual environment
+.venv/
+
 # Misc
 KEYS.md
 
