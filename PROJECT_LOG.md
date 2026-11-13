@@ -120,3 +120,11 @@ Newest at the bottom. Each entry: **what**, **why**, **proposed by**, **outcome*
 - **Why:**
 - **Proposed by:** Claude | Rayden · **Outcome:** ✅ worked | 🔲 open | ↩︎ reverted (reason)
 -->
+
+
+
+## Workbench update — 2026-11-13
+
+- 11.13 — AI-assisted addition, requested by Ray: offline browser inspection workbench and a seeded Python threshold/PSI report. Outcome: runnable without detector weights; synthetic results are labeled.
+- Decision: use seeded scores to expose threshold tradeoffs without presenting them as detector performance. Proposed by Codex; existing training metrics and production thresholds unchanged.
+- Packaging: include `scripts` for installed CLI entry points. Core mAP@50:95 and FAISS learning exercises remain open for Ray; no new model benchmark is claimed.
