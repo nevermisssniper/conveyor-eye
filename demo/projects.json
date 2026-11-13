@@ -1,0 +1,20 @@
+[
+  {
+    "id": "conveyor-eye",
+    "name": "ConveyorEye",
+    "category": "Vision",
+    "headline": "Operating decisions, made visible.",
+    "description": "Explore the cost of missed defects and false alarms on a seeded inspection stream.",
+    "mode": "conveyor",
+    "maturity": "Existing stack",
+    "disclosure": "Synthetic detections; real threshold and drift calculations.",
+    "features": [
+      "Threshold tuning",
+      "Inspection queue",
+      "Decision export"
+    ],
+    "remaining": "Weights, real camera frames and production threshold validation are still required.",
+    "number": "01",
+    "repo": "https://github.com/nevermisssniper/conveyor-eye"
+  }
+]

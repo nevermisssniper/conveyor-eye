@@ -1,0 +1,56 @@
+[
+  {
+    "id": "reasoning",
+    "title": "Reasoning from evidence",
+    "minutes": 15,
+    "requires": []
+  },
+  {
+    "id": "python",
+    "title": "Python foundations",
+    "minutes": 20,
+    "requires": []
+  },
+  {
+    "id": "data",
+    "title": "Working with tables",
+    "minutes": 25,
+    "requires": [
+      "python"
+    ]
+  },
+  {
+    "id": "probability",
+    "title": "Probability and uncertainty",
+    "minutes": 25,
+    "requires": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "evaluation",
+    "title": "Evaluate a learning system",
+    "minutes": 30,
+    "requires": [
+      "data",
+      "probability"
+    ]
+  },
+  {
+    "id": "access",
+    "title": "Design for disrupted access",
+    "minutes": 20,
+    "requires": [
+      "reasoning"
+    ]
+  },
+  {
+    "id": "prototype",
+    "title": "Build an offline learning prototype",
+    "minutes": 35,
+    "requires": [
+      "data",
+      "access"
+    ]
+  }
+]

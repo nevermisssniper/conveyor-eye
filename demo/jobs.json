@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Community learning assistant",
+    "company": "Example Learning Centre",
+    "education": "no-degree",
+    "location": "Remote",
+    "url": "https://example.com/jobs/0",
+    "description": "Support learning sessions and keep accessible lesson records.",
+    "sample": true
+  },
+  {
+    "title": "Junior data analyst",
+    "company": "Example Research Studio",
+    "education": "degree",
+    "location": "Hybrid",
+    "url": "https://example.com/jobs/1",
+    "description": "Work with SQL, experiments and reproducible reports.",
+    "sample": true
+  },
+  {
+    "title": "Operations coordinator",
+    "company": "Example Logistics",
+    "education": "unknown",
+    "location": "Imphal",
+    "url": "https://example.com/jobs/2",
+    "description": "Education requirements need verification from the source.",
+    "sample": true
+  },
+  {
+    "title": "Technical support trainee",
+    "company": "Example Computing",
+    "education": "no-degree",
+    "location": "Remote",
+    "url": "https://example.com/jobs/3",
+    "description": "Assist users, document issues and learn system diagnostics.",
+    "sample": true
+  },
+  {
+    "title": "Python research intern",
+    "company": "Example Lab",
+    "education": "degree",
+    "location": "Remote",
+    "url": "https://example.com/jobs/4",
+    "description": "Build small data pipelines and evaluate research outputs.",
+    "sample": true
+  },
+  {
+    "title": "Field programme assistant",
+    "company": "Example Foundation",
+    "education": "unknown",
+    "location": "Manipur",
+    "url": "https://example.com/jobs/5",
+    "description": "Coordinate supplies and maintain programme records.",
+    "sample": true
+  }
+]

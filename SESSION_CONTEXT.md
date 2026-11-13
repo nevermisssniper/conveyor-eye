@@ -85,3 +85,11 @@ frame (H×W×3, BGR uint8)
 5. **Calibration on real data** — synthetic ECE looks great; re-measure on ft2 model's val set after round 2.
 6. **`configs/thresholds.generated.yaml` eval overrides** — crack: 0.03 (was 0.12), missing_part: 0.01 (was 0.04) — these are eval-only; production thresholds not changed yet. Update after ft2 recalibration.
 7. **If ft2 FPR still bad** — 17 crack positives may be fundamentally insufficient. Next lever: add MVTec `tile/test/crack/` images to val, or source more real crack images.
+
+
+
+## Workbench update — 2026-11-13
+
+- 11.13 — AI-assisted addition, requested by Ray: offline browser inspection workbench and a seeded Python threshold/PSI report. Outcome: runnable without detector weights; synthetic results are labeled.
+- Decision: use seeded scores to expose threshold tradeoffs without presenting them as detector performance. Proposed by Codex; existing training metrics and production thresholds unchanged.
+- Packaging: include `scripts` for installed CLI entry points. Core mAP@50:95 and FAISS learning exercises remain open for Ray; no new model benchmark is claimed.

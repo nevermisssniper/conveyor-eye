@@ -47,7 +47,7 @@ conveyoreye-evaluate = "scripts.evaluate:main"
 conveyoreye-api = "scripts.run_api:main"
 
 [tool.setuptools.packages.find]
-include = ["conveyoreye*"]
+include = ["conveyoreye*", "scripts*"]
 
 [tool.ruff]
 line-length = 100
@@ -65,3 +65,4 @@ ignore_missing_imports = true   # ultralytics/albumentations ship partial stubs
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+

@@ -1,0 +1,492 @@
+{
+  "mode": "synthetic_scores",
+  "threshold": 0.5,
+  "tp": 28,
+  "fp": 15,
+  "fn": 6,
+  "precision": 0.6511627906976745,
+  "recall": 0.8235294117647058,
+  "shift_psi": 1.5670871202610188,
+  "samples": [
+    {
+      "confidence": 0.5816715818434404,
+      "defective": false
+    },
+    {
+      "confidence": 0.12096872571944099,
+      "defective": false
+    },
+    {
+      "confidence": 0.25395771862564887,
+      "defective": false
+    },
+    {
+      "confidence": 0.5334479360969961,
+      "defective": false
+    },
+    {
+      "confidence": 0.5059661119161158,
+      "defective": true
+    },
+    {
+      "confidence": 0.22837638970199972,
+      "defective": false
+    },
+    {
+      "confidence": 0.1146936878036795,
+      "defective": false
+    },
+    {
+      "confidence": 0.20813913133035883,
+      "defective": false
+    },
+    {
+      "confidence": 0.9342751448681819,
+      "defective": true
+    },
+    {
+      "confidence": 0.3011892811170196,
+      "defective": false
+    },
+    {
+      "confidence": 0.5516876044765956,
+      "defective": false
+    },
+    {
+      "confidence": 0.233066554607762,
+      "defective": false
+    },
+    {
+      "confidence": 0.5436717662154495,
+      "defective": false
+    },
+    {
+      "confidence": 0.6002597586930511,
+      "defective": false
+    },
+    {
+      "confidence": 0.516862596996658,
+      "defective": false
+    },
+    {
+      "confidence": 0.5255875329645523,
+      "defective": true
+    },
+    {
+      "confidence": 0.4463404921854614,
+      "defective": false
+    },
+    {
+      "confidence": 0.9183909657409185,
+      "defective": true
+    },
+    {
+      "confidence": 0.09091835196182478,
+      "defective": false
+    },
+    {
+      "confidence": 0.4419532352829977,
+      "defective": false
+    },
+    {
+      "confidence": 0.14093829235227576,
+      "defective": false
+    },
+    {
+      "confidence": 0.118706483981828,
+      "defective": false
+    },
+    {
+      "confidence": 0.5583384139192512,
+      "defective": false
+    },
+    {
+      "confidence": 0.2718354879408094,
+      "defective": false
+    },
+    {
+      "confidence": 0.15023029249375322,
+      "defective": false
+    },
+    {
+      "confidence": 0.8007594991172722,
+      "defective": true
+    },
+    {
+      "confidence": 0.5097878052920065,
+      "defective": false
+    },
+    {
+      "confidence": 0.3938579788705362,
+      "defective": true
+    },
+    {
+      "confidence": 0.8838983032607785,
+      "defective": true
+    },
+    {
+      "confidence": 0.5358821518660731,
+      "defective": false
+    },
+    {
+      "confidence": 0.23147520767071586,
+      "defective": false
+    },
+    {
+      "confidence": 0.13431363548498648,
+      "defective": false
+    },
+    {
+      "confidence": 0.08214369341772775,
+      "defective": false
+    },
+    {
+      "confidence": 0.5488905009274392,
+      "defective": false
+    },
+    {
+      "confidence": 0.12193619736015612,
+      "defective": false
+    },
+    {
+      "confidence": 0.6444432625143321,
+      "defective": true
+    },
+    {
+      "confidence": 0.7608650542535511,
+      "defective": true
+    },
+    {
+      "confidence": 0.5944142554079638,
+      "defective": false
+    },
+    {
+      "confidence": 0.7426572934279929,
+      "defective": true
+    },
+    {
+      "confidence": 0.15600045980077992,
+      "defective": false
+    },
+    {
+      "confidence": 0.20790228924258547,
+      "defective": false
+    },
+    {
+      "confidence": 0.06468633483163401,
+      "defective": false
+    },
+    {
+      "confidence": 0.10654920968792067,
+      "defective": false
+    },
+    {
+      "confidence": 0.3740095038175209,
+      "defective": false
+    },
+    {
+      "confidence": 0.3068091286505198,
+      "defective": false
+    },
+    {
+      "confidence": 0.05009021421863971,
+      "defective": false
+    },
+    {
+      "confidence": 0.30074621033751925,
+      "defective": false
+    },
+    {
+      "confidence": 0.7566608128373626,
+      "defective": true
+    },
+    {
+      "confidence": 0.14137089867840344,
+      "defective": false
+    },
+    {
+      "confidence": 0.6204758892789963,
+      "defective": true
+    },
+    {
+      "confidence": 0.7619316682455927,
+      "defective": true
+    },
+    {
+      "confidence": 0.5933044321129625,
+      "defective": true
+    },
+    {
+      "confidence": 0.3134460095237615,
+      "defective": false
+    },
+    {
+      "confidence": 0.12747471228868104,
+      "defective": false
+    },
+    {
+      "confidence": 0.47331061251075085,
+      "defective": false
+    },
+    {
+      "confidence": 0.23280466812670403,
+      "defective": false
+    },
+    {
+      "confidence": 0.3695711142689584,
+      "defective": false
+    },
+    {
+      "confidence": 0.18508776931776244,
+      "defective": false
+    },
+    {
+      "confidence": 0.687693407311507,
+      "defective": true
+    },
+    {
+      "confidence": 0.7411737446379107,
+      "defective": true
+    },
+    {
+      "confidence": 0.40385478126693514,
+      "defective": false
+    },
+    {
+      "confidence": 0.155559528939925,
+      "defective": false
+    },
+    {
+      "confidence": 0.11481943163947442,
+      "defective": false
+    },
+    {
+      "confidence": 0.36633599306383446,
+      "defective": false
+    },
+    {
+      "confidence": 0.10648748913402664,
+      "defective": false
+    },
+    {
+      "confidence": 0.18813093616636425,
+      "defective": false
+    },
+    {
+      "confidence": 0.3720015662423676,
+      "defective": false
+    },
+    {
+      "confidence": 0.5709222826056682,
+      "defective": false
+    },
+    {
+      "confidence": 0.5638116113845065,
+      "defective": true
+    },
+    {
+      "confidence": 0.2838666412794342,
+      "defective": false
+    },
+    {
+      "confidence": 0.715133524882573,
+      "defective": true
+    },
+    {
+      "confidence": 0.6272279762473258,
+      "defective": false
+    },
+    {
+      "confidence": 0.27073103128665066,
+      "defective": false
+    },
+    {
+      "confidence": 0.931739259022481,
+      "defective": true
+    },
+    {
+      "confidence": 0.3014679423689484,
+      "defective": true
+    },
+    {
+      "confidence": 0.5586098880458512,
+      "defective": true
+    },
+    {
+      "confidence": 0.6742348817628386,
+      "defective": true
+    },
+    {
+      "confidence": 0.298372029950571,
+      "defective": false
+    },
+    {
+      "confidence": 0.3008503173551267,
+      "defective": false
+    },
+    {
+      "confidence": 0.22413688370200466,
+      "defective": false
+    },
+    {
+      "confidence": 0.12744193664417902,
+      "defective": false
+    },
+    {
+      "confidence": 0.2791084479928187,
+      "defective": false
+    },
+    {
+      "confidence": 0.5065268922175599,
+      "defective": false
+    },
+    {
+      "confidence": 0.534058177188557,
+      "defective": true
+    },
+    {
+      "confidence": 0.8332801744008336,
+      "defective": true
+    },
+    {
+      "confidence": 0.8539423752816214,
+      "defective": true
+    },
+    {
+      "confidence": 0.4471054876698191,
+      "defective": false
+    },
+    {
+      "confidence": 0.3836808314563755,
+      "defective": false
+    },
+    {
+      "confidence": 0.6677544964493587,
+      "defective": true
+    },
+    {
+      "confidence": 0.2784128954231005,
+      "defective": false
+    },
+    {
+      "confidence": 0.6106599794863272,
+      "defective": true
+    },
+    {
+      "confidence": 0.19682290219895535,
+      "defective": false
+    },
+    {
+      "confidence": 0.15455524409312663,
+      "defective": false
+    },
+    {
+      "confidence": 0.12880565605034994,
+      "defective": false
+    },
+    {
+      "confidence": 0.16319623835505662,
+      "defective": false
+    },
+    {
+      "confidence": 0.20446328483738344,
+      "defective": false
+    },
+    {
+      "confidence": 0.08336194491462662,
+      "defective": false
+    },
+    {
+      "confidence": 0.27359531317942476,
+      "defective": true
+    },
+    {
+      "confidence": 0.31435340576071746,
+      "defective": true
+    },
+    {
+      "confidence": 0.09646449456989085,
+      "defective": false
+    },
+    {
+      "confidence": 0.23965046240041635,
+      "defective": false
+    },
+    {
+      "confidence": 0.18979570433148493,
+      "defective": false
+    },
+    {
+      "confidence": 0.41439548524848824,
+      "defective": true
+    },
+    {
+      "confidence": 0.2025283838875734,
+      "defective": false
+    },
+    {
+      "confidence": 0.2927631179634711,
+      "defective": false
+    },
+    {
+      "confidence": 0.12562663453799972,
+      "defective": false
+    },
+    {
+      "confidence": 0.11950728040207384,
+      "defective": false
+    },
+    {
+      "confidence": 0.48486064014848956,
+      "defective": true
+    },
+    {
+      "confidence": 0.6805775886946909,
+      "defective": true
+    },
+    {
+      "confidence": 0.1768232864769678,
+      "defective": false
+    },
+    {
+      "confidence": 0.2333098552562293,
+      "defective": false
+    },
+    {
+      "confidence": 0.8607609054949444,
+      "defective": true
+    },
+    {
+      "confidence": 0.10102323621988776,
+      "defective": false
+    },
+    {
+      "confidence": 0.19350923075496132,
+      "defective": false
+    },
+    {
+      "confidence": 0.6358714839270181,
+      "defective": true
+    },
+    {
+      "confidence": 0.4429747202175065,
+      "defective": false
+    },
+    {
+      "confidence": 0.27487428359405847,
+      "defective": false
+    },
+    {
+      "confidence": 0.28252440790373773,
+      "defective": false
+    },
+    {
+      "confidence": 0.26248373128885444,
+      "defective": false
+    },
+    {
+      "confidence": 0.5035530176666099,
+      "defective": false
+    }
+  ]
+}

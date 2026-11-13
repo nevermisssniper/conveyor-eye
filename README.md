@@ -94,3 +94,9 @@ Every module's docstring sketches a v1 → v2 → v3 path. The recurring theme:
 batch is the primary unit, config lives in YAML not code, core methods return
 dataclasses not dicts, and the third-party model is wrapped behind one file so it
 can be swapped for ONNX/TensorRT/Triton without touching the rest of the stack.
+
+
+
+## Interactive workbench (2026-11-13)
+
+Run `python serve_demo.py`, then open <http://127.0.0.1:8000>. See [QUICKSTART.md](QUICKSTART.md) for core commands, tests, provenance and remaining requirements.
